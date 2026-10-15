@@ -4,7 +4,7 @@ A full-stack web application for browsing movies, viewing show details, selectin
 
 ## Overview
 
-The Movie Booking System is developed using React.js, Django REST Framework, and MySQL. It integrates a responsive frontend with REST APIs to support user authentication, movie listings, show information, seat selection, and booking management.
+The Movie Booking System is built using React.js, Django REST Framework, and MySQL. It integrates a frontend application with REST APIs to support user authentication, movie listings, show information, seat selection, and booking management.
 
 ## Tech Stack
 
@@ -19,12 +19,12 @@ The Movie Booking System is developed using React.js, Django REST Framework, and
 - Python
 - Django
 - Django REST Framework
-- Simple JWT Authentication
+- Simple JWT
 
 **Database**
 - MySQL
 
-**Tools**
+**Development Tools**
 - Git
 - GitHub
 - VS Code
@@ -34,7 +34,7 @@ The Movie Booking System is developed using React.js, Django REST Framework, and
 
 - User registration and login
 - JWT-based authentication and token refresh
-- Movie listing and movie details
+- Movie listings and movie details
 - Theatre and screen information
 - Show and seat information
 - Seat selection for movie shows
@@ -61,9 +61,9 @@ MovieBookingApp/
 
 ## API Endpoints
 
-Base URL: `/api/`
+**Base URL:** `http://127.0.0.1:8000/api/`
 
-| Method | Endpoint | Description |
+| HTTP Method | Endpoint | Description |
 |---|---|---|
 | POST | `/register/` | User registration |
 | POST | `/login/` | User login |
@@ -74,10 +74,10 @@ Base URL: `/api/`
 | GET | `/screens/` | Retrieve screens |
 | GET | `/seats/` | Retrieve seats |
 | GET | `/shows/` | Retrieve shows |
-| `/bookings/` | Booking API | Booking management |
-| `/booking-seats/` | Booking-seat API | Booking-seat information |
+| Refer to implementation | `/bookings/` | Booking management |
+| Refer to implementation | `/booking-seats/` | Booking-seat information |
 
-The backend also includes a booking cancellation API.
+The backend also includes a booking cancellation endpoint. Refer to the backend URL configuration and view implementation for its exact path and supported HTTP methods.
 
 ## Installation and Setup
 
@@ -97,6 +97,8 @@ cd MovieBookingApp
 
 ### 2. Set Up the Backend
 
+Open PowerShell in the project root and run:
+
 ```powershell
 cd backend
 python -m venv venv
@@ -104,20 +106,20 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-Configure the required environment variables and MySQL database settings for your local environment.
+Configure the required environment variables and MySQL database settings for your local environment. Create the database specified in your Django configuration.
 
-Run database migrations and start the backend:
+Run the database migrations and start the backend:
 
 ```powershell
 python manage.py migrate
 python manage.py runserver
 ```
 
-Backend URL: `http://127.0.0.1:8000/`
+Backend development URL: `http://127.0.0.1:8000/`
 
 ### 3. Set Up the Frontend
 
-Open a new terminal:
+Open a second terminal in the project root:
 
 ```powershell
 cd frontend
@@ -125,12 +127,16 @@ npm install
 npm run dev
 ```
 
-Open the local frontend URL shown in the terminal, usually `http://localhost:5173/`.
+Open the frontend URL displayed by Vite in the terminal, usually `http://localhost:5173/`.
+
+Ensure the frontend API configuration points to the running backend.
 
 ## Future Enhancements
 
-- Online deployment
+- Payment gateway integration for online ticket payments
+- Deployment of the frontend and backend
 - Custom administration dashboard
 - Improved seat availability validation
 - Automated API and frontend testing
 - Enhanced booking experience
+
